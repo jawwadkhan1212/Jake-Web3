@@ -1,0 +1,32 @@
+<apex:page lightningStylesheets="true">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Welcome to Mutual Knowledge System's Web3 Enabler!</h1>
+  <p>Welcome to the Mutual Knowledge Systems Web3 Enabler. The Web3 Enabler allows you to do business in the 
+     blockchain using Web3 technologies.</p>
+  <p>To enable receiving payments, start by adding one or more Wallets.</p>
+  <h2>Wallet Configurations</h2>
+  <p>The Org Wallets are the wallets belonging to the Salesforce organization. The wallets may be created 
+  manually with the wallet address, or automated with Wallet Connect.</p>
+  <p>To protect your safety, only the public key is recorded when verifying the wallet. Your private key 
+  is never sent to Salesforce.</p>
+  <h3>Safety of Assets</h3>
+  <p>Your assets in the wallet are only accessible by the private key holder. They may be used to validate
+  the wallet, but your organization members do not hace access to the wallet. Your accounting department
+  will need to verify the assets with the private key.</p>
+  <h2>Customer Wallets</h2>
+  <p>Accounts may also have one or more wallets. Payments from an Account Wallet to an Org Wallet are 
+  recorded by Web3 Enabler.</p>
+  <p>Customers may also enter their public key manually or use Wallet Connect. Payments must be made with
+  access to the private key.</p>
+  <h2>Do NOT Share your Private Key</h2>
+  <p>Mutual Knowledge will never ask for your private key. You should not share your private key. The wallet manager
+  should be the only person with access, plus a recovery process.</p>
+  <!-- End Default Content REMOVE THIS -->
+
+    <style type="text/css">
+       h1 { font-size: 250%; }
+       h2 { font-size: 225%; }
+       h3 { font-size: 200%; }
+       p { font-size: 150%; }
+    </style>
+</apex:page>

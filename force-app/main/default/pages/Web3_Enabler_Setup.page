@@ -1,0 +1,26 @@
+<apex:page lightningStylesheets="true" controller="Web3EnablerSetup">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Web3 Enabler Setup</h1>
+  <p>From this screen Web3 Enabler for Salesforce is Connected to the Mutual Knowledge Web3 Enabler System</p>
+  <p>Salesforce Organization Id: <apex:outputText value="{!LEFT($Organization.Id,15)}" /></p>
+
+  <h2>Mutual Knowledge Web3 Information:</h2>
+    <apex:pageBlock title="Authorization Status">
+        <apex:pageBlockSection title="Organization Information">
+            <apex:outputText label="Organization Id" value="{!authorizationStatus.organization_uuid}" /><br />
+            <apex:outputText label="OrgId" value="{!authorizationStatus.orgid}" /><br />
+            <apex:outputText label="Organization URL" value="{!authorizationStatus.org_url}" /><br />
+            <apex:outputText label="Authorized" value="{!authorizationStatus.authorized}" /><br />           
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Connect to MuKn Web3 Enabler">
+           <apex:outputPanel rendered="{!(LEFT($Organization.Id, 15) != authorizationStatus.orgid)}">
+               <a href="https://muknweb3ca-sfdc.herokuapp.com/install?orgId={!$Organization.Id}" target="_blank">Authorize My Org</a>
+           </apex:outputPanel>
+           <apex:outputPanel rendered="{!(LEFT($Organization.Id, 15) == authorizationStatus.orgid)}">
+               <a href="https://muknweb3ca-sfdc.herokuapp.com/reauthorize?orgId={!$Organization.Id}" target="_blank">Re-authorize My Org</a>
+               <br />
+               <a href="https://muknweb3ca-sfdc.herokuapp.com/authorized/{!$Organization.Id}" target="_blank">Verify My Org</a>
+           </apex:outputPanel>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

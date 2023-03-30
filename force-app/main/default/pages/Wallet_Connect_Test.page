@@ -1,0 +1,18 @@
+<apex:page lightningStylesheets="true">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+  
+  <div id="OrganizationId">
+      <form target="_blank" method="get" action="http://localhost:3000/salesforce/organization">
+          <input id="OrganizationId" name="orgId" type="text" readonly="readonly" value="{!$Organization.id}" />
+          <button>Add my Organization</button>
+      </form>
+  </div>
+<div id="app">
+      <button id="connect-button">Initializing...</button>
+</div>
+
+<apex:includeScript id="web3wallet" html-type="module" value="{!$Resource.Web3WalletModal}" />
+</apex:page>
